@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        
+        <!-- Password Options -->
+        <div class="password-options">
+            <label for="length">Password Length:</label>
+            <input type="range" id="length" min="8" max="32" value="12" oninput="document.getElementById('lengthValue').textContent = this.value">
+            <span id="lengthValue">12</span>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="uppercase"> Include Uppercase Letters</label>
+                <label><input type="checkbox" id="numbers"> Include Numbers</label>
+                <label><input type="checkbox" id="symbols"> Include Symbols</label>
+            </div>
+
+            <!-- Password Strength Selector -->
+            <div class="strength-selector">
+                <p>Password Strength:</p>
+                <button class="strength-btn" data-strength="weak">Weak</button>
+                <button class="strength-btn" data-strength="medium">Medium</button>
+                <button class="strength-btn" data-strength="strong">Strong</button>
+            </div>
+        </div>
+
+        <!-- Generated Password -->
+        <div class="generated-password">
+            <input type="text" id="password" readonly>
+            <button id="copy">Copy to Clipboard</button>
+            <button id="toggleVisibility">Show/Hide</button>
+        </div>
+
+        <button id="generate">Generate Password</button>
+        <p id="message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
